@@ -35,7 +35,7 @@ class Matrix:
                 new_row.append(dot_product)
             self.C.append(new_row)
 
-    def get_avarege(self):
+    def get_average(self):
         total_sum = 0
         element_count = 0
 
@@ -73,5 +73,5 @@ if __name__ == "__main__":
     for row in matrix.C:
         print(row)
     
-    result_avg = matrix.get_avarege()
+    result_avg = matrix.get_average()
     print(f"\nСереднє значення елементів матриці С: {result_avg}")
