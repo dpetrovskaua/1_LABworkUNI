@@ -43,8 +43,6 @@ class Matrix:
             for element in row:
                 total_sum += element
                 element_count += 1
-
-        if element_count == 0: return 0
         return total_sum / element_count
 
 
