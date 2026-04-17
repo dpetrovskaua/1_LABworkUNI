@@ -1,30 +1,24 @@
-import unittest
+import pytest
 from main import Matrix
 
-class TestMatrix(unittest.TestCase):
+@pytest.fixture
+def matrix():
+    return Matrix()
 
-    def test_initialization(self):
-        m = Matrix()
-        self.assertEqual(m.length, 0)
-        self.assertEqual(m.A, [])
+def test_initialization(matrix):
+    assert matrix.length == 0
+    assert matrix.A == []
 
-    def test_average_calculation(self):
-        m = Matrix()
-        m.C = [[10, 20], [30, 40]] 
-        # (10+20+30+40) / 4 = 25
-        result = m.get_average()
-        self.assertEqual(result, 25.0)
+def test_average_calculation(matrix):
+    matrix.C = [[10, 20], [30, 40]]
+    # (10+20+30+40) / 4 = 25
+    assert matrix.get_average() == 25.0
 
-    def test_multiply_logic(self):
-        m = Matrix()
-        m.length = 2
-        m.A = [[1, 1], [1, 1]]
-        m.B = [[2, 2], [2, 2]]
-        
-        m.multiply()
-        
-        expected = [[4, 4], [4, 4]]
-        self.assertEqual(m.C, expected)
+def test_multiply_logic(matrix):
+    matrix.length = 2
+    matrix.A = [[1, 1], [1, 1]]
+    matrix.B = [[2, 2], [2, 2]]
 
-if __name__ == '__main__':
-    unittest.main()
+    matrix.multiply()
+    expected = [[4, 4], [4, 4]]
+    assert matrix.C == expected
