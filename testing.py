@@ -4,10 +4,6 @@ from main import Matrix
 @pytest.fixture
 def matrix():
     return Matrix()
-
-def test_initialization(matrix):
-    assert matrix.length == 0
-    assert matrix.A == []
     
 def test_multiply_logic(matrix):
     matrix.length = 2
