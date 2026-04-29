@@ -16,13 +16,13 @@ class Matrix:
         for i in range(self.length):
             row = []
             for j in range(self.length):
-                row.append(randint(-10, 10))
+                row.append(randint(-2**63, (2**63)-1)))
             self.A.append(row)
 
         for i in range(self.length):
             row = []
             for j in range(self.length):
-                row.append(randint(-10, 10))
+                row.append(randint(-2**63, (2**63)-1)))
             self.B.append(row)
 
     def multiply(self):
