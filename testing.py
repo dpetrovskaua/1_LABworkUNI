@@ -5,7 +5,7 @@ from main import Matrix
 def matrix():
     return Matrix()
     
-def test_multiply_logic(matrix):
+def test_multiply(matrix):
     matrix.length = 2
     matrix.A = [[1, 1],
                 [1, 1]]
@@ -15,7 +15,7 @@ def test_multiply_logic(matrix):
     assert matrix.C == [[4, 4],
                         [4, 4]]
 
-def test_average_calculation(matrix):
+def test_average(matrix):
     matrix.C = [[10, 20],
                 [30, 40]]
     # (10+20+30+40) / 4 = 25
